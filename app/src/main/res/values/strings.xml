@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">TheNulos</string>
+    <string name="entre_text">Bem vindo!</string>
+    <string name="username_text">username</string>
+    <string name="password_text">password</string>
+    <string name="cadastrar_text">Não é cadastrado?</string>
+</resources>
