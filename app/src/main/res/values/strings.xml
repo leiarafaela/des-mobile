@@ -9,4 +9,5 @@
     <string name="action_config">Configurações</string>
     <string name="action_adicionar">Adicionar</string>
     <string name="action_sair">Sair</string>
+    <string name="cadastro_paises_text">Cadastro de Países</string>
 </resources>
