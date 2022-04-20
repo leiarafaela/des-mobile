@@ -4,4 +4,9 @@
     <string name="username_text">username</string>
     <string name="password_text">password</string>
     <string name="cadastrar_text">Não é cadastrado?</string>
+    <string name="action_buscar">Buscar</string>
+    <string name="action_atualizar">Atualizar</string>
+    <string name="action_config">Configurações</string>
+    <string name="action_adicionar">Adicionar</string>
+    <string name="action_sair">Sair</string>
 </resources>

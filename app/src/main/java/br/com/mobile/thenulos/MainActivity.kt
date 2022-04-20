@@ -21,7 +21,8 @@ class MainActivity : DebugActivity() {
                 val intent = Intent(this, HomeScreenActivity::class.java)
                 // colocar parâmetros (opcional)
                 val params = Bundle()
-                params.putString("nome", input_name.text.toString())
+                params.putString("nome", valorUser)
+
                 intent.putExtras(params)
 
                 // enviar parâmetros simplificado
