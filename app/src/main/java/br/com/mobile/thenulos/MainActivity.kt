@@ -13,10 +13,8 @@ class MainActivity : DebugActivity() {
         button_login.setOnClickListener{
             val valorUser = input_name.text.toString()
             val valorPass = input_password.text.toString()
+            Toast.makeText(this, "Autenticado",Toast.LENGTH_LONG).show()
 
-            if (valorUser == "aluno" && valorPass == "impacta"){
-                Toast.makeText(this, "Autenticado",Toast.LENGTH_LONG).show()
-            }
         }
 
     }
