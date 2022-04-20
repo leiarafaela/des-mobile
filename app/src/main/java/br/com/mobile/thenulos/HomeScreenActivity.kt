@@ -11,6 +11,9 @@ class HomeScreenActivity : DebugActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_home_screen)
 
+        supportActionBar?.title = "Home"
+        supportActionBar?.setDisplayHomeAsUpEnabled(true)
+
     }
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {
         menuInflater.inflate(R.menu.menu_main, menu)
@@ -35,7 +38,8 @@ class HomeScreenActivity : DebugActivity() {
         } else if (id == R.id.action_sair){
             Toast.makeText(this, "Sair", Toast.LENGTH_LONG).show()
 
-        }
+        } else if (id == android.R.id.home)
+            finish()
 
         return super.onOptionsItemSelected(item)
     }
