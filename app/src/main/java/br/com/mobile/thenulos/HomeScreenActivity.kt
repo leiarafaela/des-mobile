@@ -37,6 +37,9 @@ class HomeScreenActivity : DebugActivity() {
 
         } else if (id == R.id.action_sair){
             Toast.makeText(this, "Sair", Toast.LENGTH_LONG).show()
+            val intent = Intent(this, MainActivity::class.java)
+            startActivity(intent)
+
 
         } else if (id == android.R.id.home)
             finish()
