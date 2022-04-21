@@ -20,6 +20,7 @@
         android:id="@+id/input_name"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_margin="10dp"
         android:ems="10"
         android:textSize="15sp"
         android:textColorHint="@color/white_background"
@@ -31,6 +32,7 @@
         android:id="@+id/input_password"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_margin="10dp"
         android:ems="10"
         android:textSize="15sp"
         android:textColorHint="@color/white_background"
@@ -42,6 +44,7 @@
         android:id="@+id/button_login"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_margin="20dp"
         android:text="Login" />
 
     <TextView
