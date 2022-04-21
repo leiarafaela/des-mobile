@@ -1,5 +1,6 @@
 package br.com.mobile.thenulos
 
+import android.content.Context
 import android.content.Intent
 import android.os.Bundle
 import android.os.Handler
@@ -12,8 +13,14 @@ import androidx.appcompat.widget.SearchView
 import kotlinx.android.synthetic.main.activity_home_screen.*
 import kotlinx.android.synthetic.main.activity_register.*
 import kotlinx.android.synthetic.main.login.*
+import androidx.appcompat.app.AppCompatActivity
+
 
 class HomeScreenActivity : DebugActivity() {
+
+    val contexto : Context get() = this
+
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_home_screen)
@@ -33,6 +40,7 @@ class HomeScreenActivity : DebugActivity() {
 
             override fun onQueryTextSubmit(query: String): Boolean {
                 // ação  quando terminou de buscar e enviou
+                Toast.makeText(contexto,  "Buscar: " + query, Toast.LENGTH_LONG).show()
                 return true
             }
 
