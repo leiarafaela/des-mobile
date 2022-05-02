@@ -10,11 +10,15 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.TheNulos">
         <activity
+            android:name=".AboutActivity"
+            android:exported="false" />
+        <activity
             android:name=".RegisterActivity"
             android:exported="false" />
         <activity
             android:name=".HomeScreenActivity"
-            android:exported="false" />
+            android:exported="false"
+            android:theme="@style/TheNulos.Toolbar" />
         <activity
             android:name=".DebugActivity"
             android:exported="false" />

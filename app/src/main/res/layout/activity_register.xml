@@ -4,8 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:background="@color/black"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".RegisterActivity">
+    android:layout_height="match_parent">
 
     <TextView
         android:id="@+id/texto_cadastrar_pais"
@@ -21,7 +20,6 @@
         android:id="@+id/progressAtualizar2"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:textAlignment="center"
         android:layout_marginTop="30dp"
         android:layout_gravity="center"
         android:visibility="gone"

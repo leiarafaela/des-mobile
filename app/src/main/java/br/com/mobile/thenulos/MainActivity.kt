@@ -37,6 +37,7 @@ class MainActivity : DebugActivity() {
                 Toast.makeText(this, "Usuário ou senha incorretos", Toast.LENGTH_LONG).show()
             }
         }
+
         button_login.setOnClickListener{onClickLogin()}
 
     }
