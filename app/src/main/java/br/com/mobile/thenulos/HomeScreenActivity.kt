@@ -46,6 +46,8 @@ class HomeScreenActivity : DebugActivity(), NavigationView.OnNavigationItemSelec
             when(item.itemId){
                 R.id.nav_paises ->{
                     Toast.makeText(this, "Países", Toast.LENGTH_SHORT).show()
+                    val intent = Intent(this, CountryActivity::class.java)
+                    startActivity(intent)
                 }
                 R.id.nav_sobre ->{
                     Toast.makeText(this, "Sobre", Toast.LENGTH_SHORT).show()

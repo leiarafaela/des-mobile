@@ -9,8 +9,8 @@
     <TextView
         android:id="@+id/textView"
         android:layout_width="match_parent"
-        android:layout_height="183dp"
+        android:layout_height="232dp"
         android:gravity="center"
-        android:text="Deve abrir uma nova tela com informações sobre o Aplicativo"
+        android:text="Deve abrir a tela com a lista de países"
         android:textColor="@color/white" />
 </LinearLayout>
