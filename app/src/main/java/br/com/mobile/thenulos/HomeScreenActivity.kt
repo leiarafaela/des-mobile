@@ -10,10 +10,13 @@ import android.system.Os.close
 import android.view.Menu
 import android.view.MenuItem
 import android.view.View
+import android.widget.LinearLayout
 import android.widget.Toast
 import androidx.appcompat.app.ActionBarDrawerToggle
 import androidx.appcompat.widget.SearchView
 import androidx.core.view.GravityCompat
+import androidx.recyclerview.widget.DefaultItemAnimator
+import androidx.recyclerview.widget.LinearLayoutManager
 import com.google.android.material.navigation.NavigationView
 import kotlinx.android.synthetic.main.activity_home_screen.*
 import kotlinx.android.synthetic.main.activity_register.*
@@ -33,6 +36,10 @@ class HomeScreenActivity : DebugActivity(), NavigationView.OnNavigationItemSelec
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
 
         configuraMenuLateral()
+
+        recyclerPaises?.layoutManager = LinearLayoutManager(this)
+        recyclerPaises?.itemAnimator = DefaultItemAnimator()
+        recyclerPaises?.setHasFixedSize(true)
     }
     private fun configuraMenuLateral(){
         val toogle = ActionBarDrawerToggle(
@@ -42,6 +49,20 @@ class HomeScreenActivity : DebugActivity(), NavigationView.OnNavigationItemSelec
 
         menu_lateral.setNavigationItemSelectedListener(this)
     }
+
+    private var paises = listOf<Country>()
+    override fun onResume() {
+        super.onResume()
+        paises = CountryService.getCountry()
+        recyclerPaises?.adapter = CountryAdapter(paises){
+            onClickCountry(it)
+        }
+    }
+
+    fun onClickCountry(pais: Country){
+        Toast.makeText(this, "Clicou na ${pais.nome}", Toast.LENGTH_SHORT).show()
+    }
+
     override fun onNavigationItemSelected(item: MenuItem): Boolean {
             when(item.itemId){
                 R.id.nav_paises ->{
@@ -87,14 +108,6 @@ class HomeScreenActivity : DebugActivity(), NavigationView.OnNavigationItemSelec
 
         if (id == R.id.action_buscar){
             Toast.makeText(this,  " Buscar", Toast.LENGTH_LONG).show()
-        } else if (id == R.id.action_atualizar){
-            Toast.makeText(this, "Atualizar...", Toast.LENGTH_SHORT).show()
-            progressAtualizar.visibility = View.VISIBLE
-            Handler(Looper.getMainLooper()).postDelayed(
-                {
-                    progressAtualizar.visibility = View.GONE
-                }, 10000
-            )
         } else if (id == R.id.action_adicionar){
             Toast.makeText(this, "Adicionar", Toast.LENGTH_SHORT).show()
             val intent = Intent(this, RegisterActivity::class.java)
