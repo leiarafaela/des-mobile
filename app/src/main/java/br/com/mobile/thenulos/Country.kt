@@ -1,6 +1,8 @@
 package br.com.mobile.thenulos
 
-class Country {
+import java.io.Serializable
+
+class Country: Serializable {
 
     var nome: String = ""
     var capital: String = ""
@@ -9,4 +11,8 @@ class Country {
     var populacao: String = ""
     var latitude: String = ""
     var longitude: String = ""
+
+    override fun toString(): String{
+        return "País(nome='$nome')"
+    }
 }

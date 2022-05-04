@@ -1,21 +1,27 @@
 package br.com.mobile.thenulos
 
+import android.util.Log
+import com.google.gson.Gson
+import com.google.gson.reflect.TypeToken
+import java.net.URL
+
 object CountryService {
 
-    fun getCountry(): List<Country>{
-        val paises = mutableListOf<Country>()
-        for (i in 1..10){
-            val p = Country()
-            p.nome = "País $i"
-            p.bandeira = "https://static.todamateria.com.br/upload/ba/nd/bandeira-do-brasil-og.jpg"
-            p.capital = "Capital $i"
-            p.continente = "Continente $i"
-            p.populacao = "População $i"
-            p.latitude = "Latitude $i"
-            p.longitude = "Longitude $i"
+    val host = "http://gustavodovalle.pythonanywhere.com"
+    val TAG = "WS_TheNulos"
 
-            paises.add(p)
-        }
+    fun getCountry(): List<Country>{
+
+        val paises = mutableListOf<Country>()
+        val url = "$host/paises"
+        val json = URL(url).readText()
+        Log.d(TAG, json)
+
         return paises
+    }
+
+    inline fun <reified T> parserJson(json: String): T{
+        val type = object: TypeToken<T>(){}.type
+        return Gson().fromJson<T>(json, type)
     }
 }

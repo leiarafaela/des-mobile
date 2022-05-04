@@ -14,18 +14,18 @@ class CountryAdapter(
     val paises: List<Country>,
     val onCLick: (Country) -> Unit
 ): RecyclerView.Adapter<CountryAdapter.CountryViewHolder>() {
-    class CountryViewHolder(view: View):
-            RecyclerView.ViewHolder(view){
+
+    class CountryViewHolder(view: View): RecyclerView.ViewHolder(view){
                 val cardNome: TextView
                 val cardImg: ImageView
                 val cardProgress: ProgressBar
                 var cardView: CardView
 
                 init {
-                    cardNome = view.findViewById(R.id.card_nome)
-                    cardImg = view.findViewById(R.id.card_img)
-                    cardProgress = view.findViewById(R.id.card_progress)
-                    cardView = view.findViewById(R.id.card_paises)
+                    cardNome = view.findViewById<TextView>(R.id.card_nome)
+                    cardImg = view.findViewById<ImageView>(R.id.card_img)
+                    cardProgress = view.findViewById<ProgressBar>(R.id.card_progress)
+                    cardView = view.findViewById<CardView>(R.id.card_paises)
                 }
             }
 
@@ -41,14 +41,13 @@ class CountryAdapter(
     }
 
     override fun onBindViewHolder(holder: CountryViewHolder, position: Int) {
+        val context = holder.itemView.context
         val pais = paises[position]
 
         holder.cardNome.text = pais.nome
         holder.cardProgress.visibility = View.VISIBLE
 
-        Picasso.with(holder.itemView.context)
-            .load(pais.bandeira)
-            .into(holder.cardImg, object: com.squareup.picasso.Callback{
+        Picasso.with(context).load(pais.bandeira).fit().into(holder.cardImg, object: com.squareup.picasso.Callback{
                 override fun onSuccess() {
                     holder.cardProgress.visibility = View.GONE
                 }

@@ -2,15 +2,9 @@ package br.com.mobile.thenulos
 
 import android.content.Context
 import android.content.Intent
-import android.graphics.drawable.GradientDrawable
 import android.os.Bundle
-import android.os.Handler
-import android.os.Looper
-import android.system.Os.close
 import android.view.Menu
 import android.view.MenuItem
-import android.view.View
-import android.widget.LinearLayout
 import android.widget.Toast
 import androidx.appcompat.app.ActionBarDrawerToggle
 import androidx.appcompat.widget.SearchView
@@ -19,8 +13,6 @@ import androidx.recyclerview.widget.DefaultItemAnimator
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.google.android.material.navigation.NavigationView
 import kotlinx.android.synthetic.main.activity_home_screen.*
-import kotlinx.android.synthetic.main.activity_register.*
-import kotlinx.android.synthetic.main.login.*
 import kotlinx.android.synthetic.main.toolbar.*
 
 
@@ -40,7 +32,32 @@ class HomeScreenActivity : DebugActivity(), NavigationView.OnNavigationItemSelec
         recyclerPaises?.layoutManager = LinearLayoutManager(this)
         recyclerPaises?.itemAnimator = DefaultItemAnimator()
         recyclerPaises?.setHasFixedSize(true)
+
+
     }
+
+    fun taskCountrys()  {
+        Thread{
+            paises = CountryService.getCountry()
+
+            runOnUiThread {
+                recyclerPaises?.adapter = CountryAdapter(paises) {
+                    onClickCountry(it)
+                }
+            }
+        }.start()
+    }
+
+    private var paises = listOf<Country>()
+    override fun onResume() {
+        super.onResume()
+        taskCountrys()
+    }
+
+    fun onClickCountry(pais: Country){
+        Toast.makeText(this, "Clicou na ${pais.nome}", Toast.LENGTH_SHORT).show()
+    }
+
     private fun configuraMenuLateral(){
         val toogle = ActionBarDrawerToggle(
             this, layoutMenuLateral, toolbar, R.string.open, R.string.close)
@@ -48,19 +65,6 @@ class HomeScreenActivity : DebugActivity(), NavigationView.OnNavigationItemSelec
         toogle.syncState()
 
         menu_lateral.setNavigationItemSelectedListener(this)
-    }
-
-    private var paises = listOf<Country>()
-    override fun onResume() {
-        super.onResume()
-        paises = CountryService.getCountry()
-        recyclerPaises?.adapter = CountryAdapter(paises){
-            onClickCountry(it)
-        }
-    }
-
-    fun onClickCountry(pais: Country){
-        Toast.makeText(this, "Clicou na ${pais.nome}", Toast.LENGTH_SHORT).show()
     }
 
     override fun onNavigationItemSelected(item: MenuItem): Boolean {
