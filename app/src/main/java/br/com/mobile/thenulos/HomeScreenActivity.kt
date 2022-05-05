@@ -18,6 +18,7 @@ import kotlinx.android.synthetic.main.toolbar.*
 
 class HomeScreenActivity : DebugActivity(), NavigationView.OnNavigationItemSelectedListener{
     val contexto : Context get() = this
+    val idPais : String = ""
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -56,6 +57,8 @@ class HomeScreenActivity : DebugActivity(), NavigationView.OnNavigationItemSelec
 
     fun onClickCountry(pais: Country){
 
+        val intent = Intent(this, DetailActivity()::class.java)
+        startActivity(intent)
 
         Toast.makeText(this, "Clicou na ${pais.pais}", Toast.LENGTH_SHORT).show()
     }

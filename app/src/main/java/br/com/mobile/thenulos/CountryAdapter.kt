@@ -7,8 +7,10 @@ import android.widget.ImageView
 import android.widget.ProgressBar
 import android.widget.TextView
 import androidx.cardview.widget.CardView
+import androidx.core.widget.TextViewCompat
 import androidx.recyclerview.widget.RecyclerView
 import com.squareup.picasso.Picasso
+import org.w3c.dom.Text
 
 class CountryAdapter(
     val paises: List<Country>,
@@ -17,12 +19,20 @@ class CountryAdapter(
 
     class CountryViewHolder(view: View): RecyclerView.ViewHolder(view){
                 val cardNome: TextView
+//                val cardPopulacao: TextView
+//                val cardContinente: TextView
+//                val cardLatitude: TextView
+//                val cardLongitude: TextView
                 val cardImg: ImageView
                 val cardProgress: ProgressBar
                 var cardView: CardView
 
                 init {
                     cardNome = view.findViewById<TextView>(R.id.card_nome)
+//                    cardPopulacao = view.findViewById<TextView>(R.id.card_populacao)
+//                    cardContinente = view.findViewById<TextView>(R.id.card_continente)
+//                    cardLatitude = view.findViewById<TextView>(R.id.card_latitude)
+//                    cardLongitude = view.findViewById<TextView>(R.id.card_longitude)
                     cardImg = view.findViewById<ImageView>(R.id.card_img)
                     cardProgress = view.findViewById<ProgressBar>(R.id.card_progress)
                     cardView = view.findViewById<CardView>(R.id.card_paises)

@@ -4,6 +4,7 @@ import java.io.Serializable
 
 class Country: Serializable {
 
+    var id: String = ""
     var pais: String = ""
     var capital: String = ""
     var bandeira: String = ""

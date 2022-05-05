@@ -15,9 +15,6 @@
             android:name=".DetailActivity"
             android:exported="false" />
         <activity
-            android:name=".activity_detail"
-            android:exported="false" />
-        <activity
             android:name=".CountryActivity"
             android:exported="false" />
         <activity

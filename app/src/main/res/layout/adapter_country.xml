@@ -4,8 +4,7 @@
     android:layout_height="wrap_content"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:id="@+id/card_paises"
-    app:cardBackgroundColor="@color/black"
-    android:foreground="?attr/selectableItemBackground">
+    app:cardBackgroundColor="@color/black">
     <LinearLayout
         android:orientation="vertical"
         android:layout_width="match_parent"
