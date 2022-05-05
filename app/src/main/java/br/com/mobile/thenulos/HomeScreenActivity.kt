@@ -55,7 +55,9 @@ class HomeScreenActivity : DebugActivity(), NavigationView.OnNavigationItemSelec
     }
 
     fun onClickCountry(pais: Country){
-        Toast.makeText(this, "Clicou na ${pais.nome}", Toast.LENGTH_SHORT).show()
+
+
+        Toast.makeText(this, "Clicou na ${pais.pais}", Toast.LENGTH_SHORT).show()
     }
 
     private fun configuraMenuLateral(){

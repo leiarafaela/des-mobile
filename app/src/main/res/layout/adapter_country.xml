@@ -2,32 +2,67 @@
 <androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:id="@+id/card_paises"
+    app:cardBackgroundColor="@color/black"
     android:foreground="?attr/selectableItemBackground">
     <LinearLayout
         android:orientation="vertical"
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
-        <TextView
-            android:id="@+id/card_nome"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textSize="20sp"
-            android:layout_margin="16dp"/>
-        <FrameLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content">
-            <ImageView
-                android:id="@+id/card_img"
-                android:layout_width="260dp"
-                android:layout_height="110dp"
-                android:layout_gravity="center_horizontal"/>
-            <ProgressBar
-                android:id="@+id/card_progress"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"/>
-        </FrameLayout>
+
+
+            <TableLayout
+                android:id="@+id/tableLayout1"
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:stretchColumns="1">
+
+                    <TableRow android:id="@+id/tableRow1"
+                        android:layout_width="0dp"
+                        android:layout_weight="1">
+
+                        <FrameLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content">
+
+                            <TextView
+                                android:id="@+id/card_nome"
+                                android:layout_width="match_parent"
+                                android:layout_height="50dp"
+                                android:layout_marginLeft="20dp"
+                                android:textSize="20dp"
+                                android:gravity="center"
+                                android:textColor="@color/white" />
+
+                        </FrameLayout>
+
+                        <FrameLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content">
+                            <ImageView
+                                android:id="@+id/card_img"
+                                android:layout_width="60dp"
+                                android:layout_height="40dp"
+                                android:layout_marginRight="20dp"
+                                android:textAlignment="inherit"
+                                android:layout_gravity="right" />
+
+                        </FrameLayout>
+                        <FrameLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content">
+
+                            <ProgressBar
+                                android:id="@+id/card_progress"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"/>
+                        </FrameLayout>
+
+                    </TableRow>
+            </TableLayout>
+
     </LinearLayout>
 
 </androidx.cardview.widget.CardView>

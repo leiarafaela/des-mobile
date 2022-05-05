@@ -44,7 +44,7 @@ class CountryAdapter(
         val context = holder.itemView.context
         val pais = paises[position]
 
-        holder.cardNome.text = pais.nome
+        holder.cardNome.text = pais.pais
         holder.cardProgress.visibility = View.VISIBLE
 
         Picasso.with(context).load(pais.bandeira).fit().into(holder.cardImg, object: com.squareup.picasso.Callback{

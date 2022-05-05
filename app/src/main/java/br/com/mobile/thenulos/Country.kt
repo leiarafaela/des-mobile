@@ -4,7 +4,7 @@ import java.io.Serializable
 
 class Country: Serializable {
 
-    var nome: String = ""
+    var pais: String = ""
     var capital: String = ""
     var bandeira: String = ""
     var continente: String = ""
@@ -13,6 +13,6 @@ class Country: Serializable {
     var longitude: String = ""
 
     override fun toString(): String{
-        return "País(nome='$nome')"
+        return "País(nome='$pais')"
     }
 }
