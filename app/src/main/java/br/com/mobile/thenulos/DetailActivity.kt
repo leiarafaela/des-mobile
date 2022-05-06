@@ -1,27 +1,42 @@
 package br.com.mobile.thenulos
 
-import android.content.Context
-import androidx.appcompat.app.AppCompatActivity
+import android.annotation.SuppressLint
 import android.os.Bundle
-import android.os.Debug
 import android.view.MenuItem
-import android.view.View
-import android.widget.TextView
-import androidx.recyclerview.widget.DefaultItemAnimator
-import androidx.recyclerview.widget.LinearLayoutManager
+import com.squareup.picasso.Picasso
 import kotlinx.android.synthetic.main.activity_detail.*
-import kotlinx.android.synthetic.main.activity_home_screen.*
 import kotlinx.android.synthetic.main.toolbar.*
 
 class DetailActivity : DebugActivity() {
+
+    var pais: Country? = null
+    @SuppressLint("SetTextI18n")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_detail)
 
-        supportActionBar?.title = "Sobre o pais"
-        supportActionBar?.setDisplayHomeAsUpEnabled(true)
-    }
+        pais = intent.getSerializableExtra("pais") as Country
 
+        setSupportActionBar(toolbar)
+        supportActionBar?.title = "Detalhes"
+        supportActionBar?.setDisplayHomeAsUpEnabled(true)
+
+
+        nomePais.text = "País: ${pais?.pais}"
+        nomeCapital.text = "Capital: ${pais?.capital}"
+        nomeContinente.text = "Continente: ${pais?.continente}"
+        nomePopulacao.text = "População: ${pais?.populacao}"
+        nomeLatitude.text = "Latitude: ${pais?.latitude}"
+        nomeLogintude.text = "Longitude: ${pais?.longitude}"
+
+        Picasso.with(this).load(pais?.bandeira).fit().into(imagemPais,
+            object: com.squareup.picasso.Callback{
+                override fun onSuccess() {}
+
+                override fun onError() { }
+            })
+
+    }
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         val id = item.itemId
 
@@ -29,23 +44,7 @@ class DetailActivity : DebugActivity() {
             finish()
 
         return super.onOptionsItemSelected(item)
+
     }
 
-    fun taskCountrys()  {
-        Thread{
-            paises = CountryService.getCountryId("2")
-
-            runOnUiThread {
-//                recyclerPaisesDetail?.adapter = CountryAdapter(paises) {
-//
-//                }
-            }
-        }.start()
-    }
-
-    private var paises = listOf<Country>()
-    override fun onResume() {
-        super.onResume()
-        //taskCountrys()
-    }
 }

@@ -2,9 +2,9 @@ package br.com.mobile.thenulos
 
 import java.io.Serializable
 
-class Country: Serializable {
+class   Country: Serializable {
 
-    var id: String = ""
+    var id: Long = 0
     var pais: String = ""
     var capital: String = ""
     var bandeira: String = ""

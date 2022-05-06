@@ -18,7 +18,7 @@ import kotlinx.android.synthetic.main.toolbar.*
 
 class HomeScreenActivity : DebugActivity(), NavigationView.OnNavigationItemSelectedListener{
     val contexto : Context get() = this
-    val idPais : String = ""
+    private var paises = listOf<Country>()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -36,10 +36,14 @@ class HomeScreenActivity : DebugActivity(), NavigationView.OnNavigationItemSelec
 
 
     }
+    override fun onResume() {
+        super.onResume()
+        taskCountrys()
+    }
 
     fun taskCountrys()  {
         Thread{
-            paises = CountryService.getCountry()
+            this.paises = CountryService.getCountry()
 
             runOnUiThread {
                 recyclerPaises?.adapter = CountryAdapter(paises) {
@@ -49,18 +53,12 @@ class HomeScreenActivity : DebugActivity(), NavigationView.OnNavigationItemSelec
         }.start()
     }
 
-    private var paises = listOf<Country>()
-    override fun onResume() {
-        super.onResume()
-        taskCountrys()
-    }
-
     fun onClickCountry(pais: Country){
-
+        Toast.makeText(this, "Clicou na ${pais.pais}", Toast.LENGTH_SHORT).show()
         val intent = Intent(this, DetailActivity()::class.java)
+        intent.putExtra("pais", pais)
         startActivity(intent)
 
-        Toast.makeText(this, "Clicou na ${pais.pais}", Toast.LENGTH_SHORT).show()
     }
 
     private fun configuraMenuLateral(){
@@ -76,7 +74,7 @@ class HomeScreenActivity : DebugActivity(), NavigationView.OnNavigationItemSelec
             when(item.itemId){
                 R.id.nav_paises ->{
                     Toast.makeText(this, "Países", Toast.LENGTH_SHORT).show()
-                    val intent = Intent(this, HomeScreenActivity::class.java)
+                    val intent = Intent(this, CountryActivity::class.java)
                     startActivity(intent)
                 }
                 R.id.nav_sobre ->{

@@ -9,7 +9,8 @@ class CountryActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_country)
 
-        supportActionBar?.title = "Países"
+        val pais: Country? = null
+        supportActionBar?.title = pais?.pais
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
     }
 
