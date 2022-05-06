@@ -19,6 +19,7 @@ class CountryAdapter(
 
     class CountryViewHolder(view: View): RecyclerView.ViewHolder(view){
                 val cardNome: TextView
+                val cardCapital: TextView
 //                val cardPopulacao: TextView
 //                val cardContinente: TextView
 //                val cardLatitude: TextView
@@ -29,6 +30,7 @@ class CountryAdapter(
 
                 init {
                     cardNome = view.findViewById<TextView>(R.id.card_nome)
+                    cardCapital = view.findViewById<TextView>(R.id.card_capital)
 //                    cardPopulacao = view.findViewById<TextView>(R.id.card_populacao)
 //                    cardContinente = view.findViewById<TextView>(R.id.card_continente)
 //                    cardLatitude = view.findViewById<TextView>(R.id.card_latitude)
@@ -55,6 +57,7 @@ class CountryAdapter(
         val pais = paises[position]
 
         holder.cardNome.text = pais.pais
+        holder.cardCapital.text = pais.capital
         holder.cardProgress.visibility = View.VISIBLE
 
         Picasso.with(context).load(pais.bandeira).fit().into(holder.cardImg, object: com.squareup.picasso.Callback{
