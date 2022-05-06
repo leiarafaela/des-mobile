@@ -15,4 +15,5 @@
     <string name="sair_nav">Sair</string>
     <string name="open">Abrir</string>
     <string name="close">Fechar</string>
+    <string name="Sobre">Nosso app tem por objetivo trazer informações significativas sobre diferentes países. Não há nenhum tipo de critério para a escolha dos paises listados, são apenas para uso informativo.</string>
 </resources>
