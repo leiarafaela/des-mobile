@@ -12,9 +12,12 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.TheNulos">
         <activity
+            android:name=".LocalizationActivity"
+            android:exported="false" />
+        <activity
             android:name=".DetailActivity"
             android:exported="false"
-            android:theme="@style/TheNulos.Toolbar"/>
+            android:theme="@style/TheNulos.Toolbar" />
         <activity
             android:name=".CountryActivity"
             android:exported="false" />

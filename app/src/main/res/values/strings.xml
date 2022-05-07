@@ -16,4 +16,7 @@
     <string name="open">Abrir</string>
     <string name="close">Fechar</string>
     <string name="Sobre">Nosso app tem por objetivo trazer informações significativas sobre diferentes países. Não há nenhum tipo de critério para a escolha dos paises listados, são apenas para uso informativo.</string>
+    <string name="login">Login</string>
+    <string name="localizacao">Localização</string>
+    <string name="localiza">Localização</string>
 </resources>

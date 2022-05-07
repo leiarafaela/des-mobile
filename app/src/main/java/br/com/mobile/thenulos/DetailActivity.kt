@@ -1,8 +1,10 @@
 package br.com.mobile.thenulos
 
 import android.annotation.SuppressLint
+import android.content.Intent
 import android.os.Bundle
 import android.view.MenuItem
+import android.widget.Toast
 import com.squareup.picasso.Picasso
 import kotlinx.android.synthetic.main.activity_detail.*
 import kotlinx.android.synthetic.main.toolbar.*
@@ -10,6 +12,7 @@ import kotlinx.android.synthetic.main.toolbar.*
 class DetailActivity : DebugActivity() {
 
     var pais: Country? = null
+
     @SuppressLint("SetTextI18n")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -30,21 +33,30 @@ class DetailActivity : DebugActivity() {
         nomeLogintude.text = "Longitude: ${pais?.longitude}"
 
         Picasso.with(this).load(pais?.bandeira).fit().into(imagemPais,
-            object: com.squareup.picasso.Callback{
+            object : com.squareup.picasso.Callback {
                 override fun onSuccess() {}
 
-                override fun onError() { }
-            })
+                override fun onError() {}
+
+            }
+        )
+        fun onClickLocalization() {
+            Toast.makeText(this, "Localizando...", Toast.LENGTH_SHORT).show()
+            val intent = Intent(this, LocalizationActivity::class.java)
+            startActivity(intent)
+
+        }
+        button_localizacao.setOnClickListener{onClickLocalization()}
 
     }
+
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         val id = item.itemId
 
         if (id == android.R.id.home)
             finish()
 
-        return super.onOptionsItemSelected(item)
-
+            return super.onOptionsItemSelected(item)
     }
 
 }

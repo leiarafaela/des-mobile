@@ -116,6 +116,19 @@
                         android:layout_margin="8dp"/>
 
                 </ScrollView>
+
+                <ScrollView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+                    <Button
+                        android:id="@+id/button_localizacao"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="20dp"
+                        android:text="@string/localizacao" />
+
+                </ScrollView>
+
             </LinearLayout>
 
         </androidx.cardview.widget.CardView>
