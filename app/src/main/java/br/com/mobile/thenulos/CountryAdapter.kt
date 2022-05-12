@@ -31,10 +31,6 @@ class CountryAdapter(
                 init {
                     cardNome = view.findViewById<TextView>(R.id.card_nome)
                     cardCapital = view.findViewById<TextView>(R.id.card_capital)
-//                    cardPopulacao = view.findViewById<TextView>(R.id.card_populacao)
-//                    cardContinente = view.findViewById<TextView>(R.id.card_continente)
-//                    cardLatitude = view.findViewById<TextView>(R.id.card_latitude)
-//                    cardLongitude = view.findViewById<TextView>(R.id.card_longitude)
                     cardImg = view.findViewById<ImageView>(R.id.card_img)
                     cardProgress = view.findViewById<ProgressBar>(R.id.card_progress)
                     cardView = view.findViewById<CardView>(R.id.card_paises)
