@@ -18,9 +18,9 @@
 
     <com.google.android.material.textfield.TextInputLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:textColorHint="@color/white_background"
-        app:passwordToggleTint="@color/white">
+        android:layout_height="70dp"
+        app:boxBackgroundColor="#808080"
+        android:textColorHint="@color/white">
 
         <EditText
             android:id="@+id/input_name"
@@ -38,8 +38,9 @@
 
     <com.google.android.material.textfield.TextInputLayout
         android:layout_width="match_parent"
-        android:layout_height="64dp"
-        android:textColorHint="@color/white_background"
+        android:layout_height="70dp"
+        android:textColorHint="@color/white"
+        app:boxBackgroundColor="#808080"
         app:passwordToggleEnabled="true"
         app:passwordToggleTint="@color/white">
 
