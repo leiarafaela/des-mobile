@@ -1,5 +1,6 @@
 package br.com.mobile.thenulos
 
+import android.content.Context
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -11,12 +12,30 @@ class MainActivity : DebugActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.login)
 
+        if (Prefs.getBoolean("chkRemember") == true) {
+            input_name.setText(Prefs.getString("nome"))
+            input_password.setText(Prefs.getString("senha"))
+            chkRememberMe.isChecked = true
+        }
+
         fun onClickLogin() {
             val valorUser = input_name.text.toString()
             val valorPass = input_password.text.toString()
             //Toast.makeText(context, "$valorUsuario : $valorSenha", Toast.LENGTH_LONG).show()
 
             if (valorUser == "aluno" && valorPass == "impacta") {
+
+                if (chkRememberMe.isChecked){
+                    Prefs.setString("nome", valorUser)
+                    Prefs.setString("senha", valorPass)
+                    Prefs.setBoolean("chkRemember", chkRememberMe.isChecked)
+                }
+                else{
+                    Prefs.setString("nome", "")
+                    Prefs.setString("senha", "")
+                    Prefs.setBoolean("chkRemember", chkRememberMe.isChecked)
+                }
+
                 // criar intent
                 val intent = Intent(this, HomeScreenActivity::class.java)
                 // colocar parâmetros (opcional)

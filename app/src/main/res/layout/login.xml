@@ -16,35 +16,63 @@
         android:textSize="20sp"
         android:textColor="@color/white"/>
 
-    <EditText
-        android:id="@+id/input_name"
+    <com.google.android.material.textfield.TextInputLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_margin="10dp"
-        android:ems="10"
-        android:textSize="15sp"
         android:textColorHint="@color/white_background"
-        android:textColor="@color/white"
-        android:inputType="textPersonName"
-        android:hint="@string/username_text" />
+        app:passwordToggleTint="@color/white">
 
-    <EditText
-        android:id="@+id/input_password"
+        <EditText
+            android:id="@+id/input_name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:ems="10"
+            android:hint="@string/username_text"
+            android:inputType="textPersonName"
+            android:textColor="@color/white"
+            android:textColorHint="@color/white_background"
+            android:textSize="15sp" />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:layout_width="match_parent"
+        android:layout_height="64dp"
+        android:textColorHint="@color/white_background"
+        app:passwordToggleEnabled="true"
+        app:passwordToggleTint="@color/white">
+
+        <EditText
+            android:id="@+id/input_password"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:ems="10"
+            android:hint="@string/password_text"
+            android:inputType="textPassword"
+            android:textColor="@color/white"
+            android:textColorHint="@color/white_background"
+            android:textSize="15sp" />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+
+    <CheckBox
+        android:id="@+id/chkRememberMe"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_margin="10dp"
-        android:ems="10"
-        android:textSize="15sp"
-        android:textColorHint="@color/white_background"
         android:textColor="@color/white"
-        android:inputType="textPassword"
-        android:hint="@string/password_text"/>
+        android:layout_margin="5dp"
+        android:text="Lembrar login">
+    </CheckBox>
 
     <Button
         android:id="@+id/button_login"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="20dp"
+        android:shadowRadius="@integer/material_motion_duration_long_2"
         android:text="@string/login" />
 
     <TextView
