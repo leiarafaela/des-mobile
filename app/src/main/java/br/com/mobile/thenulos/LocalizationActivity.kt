@@ -12,10 +12,11 @@ import kotlinx.android.synthetic.main.activity_localization.*
 import kotlinx.android.synthetic.main.activity_register.*
 
 class LocalizationActivity : AppCompatActivity() {
+
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_localization)
-
 
         supportActionBar?.title = "Localização"
         supportActionBar?.setDisplayHomeAsUpEnabled(true)

@@ -4,17 +4,119 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:background="@color/black"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:padding="20dp"
+    android:orientation="vertical"
+    tools:context=".RegisterActivity">
+    <com.google.android.material.textfield.TextInputLayout
+        android:layout_width="match_parent"
+        android:layout_height="70dp"
+        app:boxBackgroundColor="#808080"
 
-    <TextView
-        android:id="@+id/texto_cadastrar_pais"
-        android:layout_width="0dp"
-        android:layout_height="126dp"
-        android:layout_weight="1"
-        android:gravity="center"
-        android:text="@string/cadastro_paises_text"
-        android:textColor="@color/white"
-        android:textSize="20sp" />
+        android:textColorHint="@color/white">
+
+        <EditText
+            android:id="@+id/PaisNome"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:hint="Nome do país"
+            android:inputType="textPersonName|textCapWords"/>
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:layout_width="match_parent"
+        android:layout_height="70dp"
+        app:boxBackgroundColor="#808080"
+        android:textColorHint="@color/white">
+
+        <EditText
+            android:id="@+id/PaisCapital"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:hint="Capital"
+            android:inputType="textPersonName|textCapWords" />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:layout_width="match_parent"
+        android:layout_height="70dp"
+        app:boxBackgroundColor="#808080"
+        android:textColorHint="@color/white">
+
+        <EditText
+            android:id="@+id/PaisContinente"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:hint="Continente"
+            android:inputType="textPersonName|textCapWords" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:layout_width="match_parent"
+        android:layout_height="70dp"
+        app:boxBackgroundColor="#808080"
+        android:textColorHint="@color/white">
+        <EditText
+            android:id="@+id/PaisPopulacao"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:hint="População"
+            android:inputType="number"/>
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:layout_width="match_parent"
+        android:layout_height="70dp"
+        app:boxBackgroundColor="#808080"
+        android:textColorHint="@color/white">
+        <EditText
+            android:id="@+id/PaisLatitude"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:hint="Latitude"
+            android:inputType="textCapWords"/>
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:layout_width="match_parent"
+        android:layout_height="70dp"
+        app:boxBackgroundColor="#808080"
+        android:textColorHint="@color/white">
+        <EditText
+            android:id="@+id/PaisLongitude"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:hint="Longitude"
+            android:inputType="textCapWords"/>
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:layout_width="match_parent"
+        android:layout_height="70dp"
+        app:boxBackgroundColor="#808080"
+        android:textColorHint="@color/white">
+        <EditText
+            android:id="@+id/PaisUrl"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:hint="Bandeira (URL-Imagem)"
+            android:inputType="textWebEmailAddress"/>
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <Button
+        android:id="@+id/salvarPais"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Salvar" />
 
     <ProgressBar
         android:id="@+id/progressAtualizar2"

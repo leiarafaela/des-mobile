@@ -48,6 +48,7 @@ class HomeScreenActivity : DebugActivity(), NavigationView.OnNavigationItemSelec
             runOnUiThread {
                 recyclerPaises?.adapter = CountryAdapter(paises) {
                     onClickCountry(it)
+
                 }
             }
         }.start()
