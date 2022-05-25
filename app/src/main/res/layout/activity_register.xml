@@ -109,7 +109,7 @@
             android:layout_height="wrap_content"
             android:ems="10"
             android:hint="Bandeira (URL-Imagem)"
-            android:inputType="textWebEmailAddress"/>
+            android:inputType="textPersonName|textWebEmailAddress"/>
     </com.google.android.material.textfield.TextInputLayout>
 
     <Button

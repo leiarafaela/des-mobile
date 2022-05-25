@@ -29,10 +29,29 @@ class RegisterActivity : AppCompatActivity() {
             startActivity(intent)
 // falta implementar a inclusão via api
         }
-        salvarPais.setOnClickListener{onClickLocalization()}
+        salvarPais.setOnClickListener{
+
+            val paises = Country()
+            paises.pais = PaisNome.text.toString()
+            paises.capital = PaisCapital.text.toString()
+            paises.bandeira = PaisUrl.text.toString()
+            paises.continente = PaisContinente.text.toString()
+            paises.populacao = PaisPopulacao.text.toString()
+            paises.latitude = PaisLatitude.text.toString()
+            paises.longitude = PaisLongitude.text.toString()
+            taskAtualizar(paises)
+        }
     }
 
-
+    private fun taskAtualizar(paises: Country) {
+        // Thread para salvar a discilpina
+        Thread {
+            CountryService.save(paises)
+            runOnUiThread {
+                finish()
+            }
+        }.start()
+    }
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         val id = item.itemId
@@ -40,27 +59,6 @@ class RegisterActivity : AppCompatActivity() {
         if (id == android.R.id.home){
             finish()
         }
-        //if (id == R.id.action_buscar){
-        //    Toast.makeText(this,  " Buscar", Toast.LENGTH_LONG).show()
-        //} else if (id == R.id.action_atualizar){
-        //    Toast.makeText(this, "Atualizar", Toast.LENGTH_SHORT).show()
-        //    progressAtualizar2.visibility = View.VISIBLE
-        //    Handler(Looper.getMainLooper()).postDelayed(
-        //        {
-        //            progressAtualizar2.visibility = View.GONE
-        //        }, 10000
-        //    )
-        //} else if (id == R.id.action_adicionar){
-        //    Toast.makeText(this, "Adicionar", Toast.LENGTH_SHORT).show()
-        //    val intent = Intent(this, RegisterActivity::class.java)
-        //    startActivity(intent)
-//
-        //} else if (id == R.id.action_sair){
-        //    Toast.makeText(this, "Sair", Toast.LENGTH_SHORT).show()
-        //    val intent = Intent(this, MainActivity::class.java)
-        //    startActivity(intent)
-//
-
         return super.onOptionsItemSelected(item)
     }
 }

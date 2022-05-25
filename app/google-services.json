@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "417595700048",
+    "project_id": "lms-si-3a",
+    "storage_bucket": "lms-si-3a.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:417595700048:android:ae7eccb95e3730193b7255",
+        "android_client_info": {
+          "package_name": "br.com.fernandosousa.lmsapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "417595700048-3sdpd0viqn2iv69k11lp4nahuvt42lg4.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDZQKL56xm3u1x_kE7Y7DR4NKnnEjjoouI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "417595700048-3sdpd0viqn2iv69k11lp4nahuvt42lg4.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
