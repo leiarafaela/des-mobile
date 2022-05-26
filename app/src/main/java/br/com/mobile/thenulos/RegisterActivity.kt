@@ -23,14 +23,14 @@ class RegisterActivity : AppCompatActivity() {
         supportActionBar?.title = "Cadastro"
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
 
-        fun onClickLocalization() {
-            Toast.makeText(this, "Salvando País", Toast.LENGTH_SHORT).show()
-            val intent = Intent(this, HomeScreenActivity::class.java)
-            startActivity(intent)
-// falta implementar a inclusão via api
-        }
+//        fun onClickLocalization() {
+//            Toast.makeText(this, "Salvando País", Toast.LENGTH_SHORT).show()
+//            val intent = Intent(this, HomeScreenActivity::class.java)
+//            startActivity(intent)
+//        }
         salvarPais.setOnClickListener{
 
+            Toast.makeText(this, "Salvando país", Toast.LENGTH_SHORT)
             val paises = Country()
             paises.pais = PaisNome.text.toString()
             paises.capital = PaisCapital.text.toString()

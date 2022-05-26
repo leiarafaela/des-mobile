@@ -43,19 +43,18 @@ class HomeScreenActivity : DebugActivity(), NavigationView.OnNavigationItemSelec
 
     fun taskCountrys()  {
         Thread{
-            this.paises = CountryService.getCountry()
+            this.paises = CountryService.getCountry(contexto)
 
             runOnUiThread {
                 recyclerPaises?.adapter = CountryAdapter(paises) {
                     onClickCountry(it)
-
                 }
             }
         }.start()
     }
 
     fun onClickCountry(pais: Country){
-        Toast.makeText(this, "Clicou na ${pais.pais}", Toast.LENGTH_SHORT).show()
+        //Toast.makeText(this, "Clicou na ${pais.pais}", Toast.LENGTH_SHORT).show()
         val intent = Intent(this, DetailActivity()::class.java)
         intent.putExtra("pais", pais)
         startActivity(intent)
@@ -74,17 +73,17 @@ class HomeScreenActivity : DebugActivity(), NavigationView.OnNavigationItemSelec
     override fun onNavigationItemSelected(item: MenuItem): Boolean {
             when(item.itemId){
                 R.id.nav_paises ->{
-                    Toast.makeText(this, "Países", Toast.LENGTH_SHORT).show()
+                    //Toast.makeText(this, "Países", Toast.LENGTH_SHORT).show()
                     val intent = Intent(this, HomeScreenActivity::class.java)
                     startActivity(intent)
                 }
                 R.id.nav_sobre ->{
-                    Toast.makeText(this, "Sobre", Toast.LENGTH_SHORT).show()
+                    //Toast.makeText(this, "Sobre", Toast.LENGTH_SHORT).show()
                     val intent = Intent(this, AboutActivity::class.java)
                     startActivity(intent)
                 }
                 R.id.nav_sair ->{
-                    Toast.makeText(this, "Sair", Toast.LENGTH_SHORT).show()
+                    //Toast.makeText(this, "Sair", Toast.LENGTH_SHORT).show()
                     val intent = Intent(this, MainActivity::class.java)
                     startActivity(intent)
                 }
@@ -121,7 +120,7 @@ class HomeScreenActivity : DebugActivity(), NavigationView.OnNavigationItemSelec
             val intent = Intent(this, RegisterActivity::class.java)
             startActivity(intent)
         } else if (id == R.id.action_sair){
-            Toast.makeText(this, "Sair", Toast.LENGTH_SHORT).show()
+            Toast.makeText(this, "Saindo...", Toast.LENGTH_SHORT).show()
             val intent = Intent(this, MainActivity::class.java)
             startActivity(intent)
 

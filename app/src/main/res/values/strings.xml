@@ -19,4 +19,6 @@
     <string name="login">Login</string>
     <string name="localizacao">Localização</string>
     <string name="localiza">Localização</string>
+    <string name="action_deletar">Deletar</string>
+    <string name="action_alterar">Alterar</string>
 </resources>

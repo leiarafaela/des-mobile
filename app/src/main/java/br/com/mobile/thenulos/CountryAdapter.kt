@@ -20,13 +20,13 @@ class CountryAdapter(
     class CountryViewHolder(view: View): RecyclerView.ViewHolder(view){
                 val cardNome: TextView
                 val cardCapital: TextView
+                val cardImg: ImageView
+                val cardProgress: ProgressBar
+                var cardView: CardView
 //                val cardPopulacao: TextView
 //                val cardContinente: TextView
 //                val cardLatitude: TextView
 //                val cardLongitude: TextView
-                val cardImg: ImageView
-                val cardProgress: ProgressBar
-                var cardView: CardView
 
                 init {
                     cardNome = view.findViewById<TextView>(R.id.card_nome)

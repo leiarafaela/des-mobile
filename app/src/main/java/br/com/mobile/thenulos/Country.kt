@@ -10,13 +10,13 @@ class   Country: Serializable {
 
     @PrimaryKey
     var id: Long = 0
-    var pais: String = ""
-    var capital: String = ""
-    var bandeira: String = ""
-    var continente: String = ""
-    var populacao: String = ""
-    var latitude: String = ""
-    var longitude: String = ""
+    var pais = ""
+    var capital = ""
+    var bandeira = ""
+    var continente  = ""
+    var populacao = ""
+    var latitude = ""
+    var longitude = ""
 
     override fun toString(): String{
         return "País(nome='$pais')"

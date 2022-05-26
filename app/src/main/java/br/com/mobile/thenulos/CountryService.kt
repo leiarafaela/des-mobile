@@ -1,22 +1,56 @@
 package br.com.mobile.thenulos
 
-import android.database.sqlite.SQLiteBindOrColumnIndexOutOfRangeException
+import android.content.Context
 import android.util.Log
 import com.google.gson.Gson
 import com.google.gson.reflect.TypeToken
+import java.lang.Exception
+import java.lang.reflect.Executable
 import java.net.URL
+import java.util.zip.CheckedOutputStream
 
 object CountryService {
 
-    val host = "https://gustavodovalle.pythonanywhere.com"
+    val host = "https://gustavodovalle.pythonanywhere.com" //
     val TAG = "WS_TheNulos"
 
-    fun getCountry(): List<Country>{
+//    fun getCountry(): List<Country>{
+//
+//        val url = "$host/paises"
+//        val json = HttpHelper.get(url)
+//        Log.d(TAG, json)
+//        return parserJson<List<Country>>(json)
+//    }
+    fun getCountry (context: Context): List<Country> {
+        var paises = ArrayList<Country>()
+        try {
+            val url = "$host/paises"
+            val json = HttpHelper.get(url)
+            paises = parserJson(json)
+            for (d in paises) {
+                saveOffline(d)
+            }
+            return paises
+        } catch (ex: Exception){
+            val dao = DatabaseManager.getCountryDAO()
+            val paises = dao.findAll()
+            return paises
+        }
+    }
 
-        val url = "$host/paises"
-        val json = HttpHelper.get(url)
-        Log.d(TAG, json)
-        return parserJson<List<Country>>(json)
+    fun getPais (context: Context, id: Long): Country? {
+        if (AndroidUtils.isInternetDisponivel()) {
+            val url = "$host/paises/${id}"
+            val json = HttpHelper.get(url)
+            val paises = parserJson<Country>(json)
+
+            return paises
+        } else {
+            val dao = DatabaseManager.getCountryDAO()
+            val paises = dao.getById(id)
+            return paises
+        }
+
     }
 
     inline fun <reified T> parserJson(json: String): T{
