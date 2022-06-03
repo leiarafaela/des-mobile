@@ -21,7 +21,6 @@ class MainActivity : DebugActivity() {
         fun onClickLogin() {
             val valorUser = input_name.text.toString()
             val valorPass = input_password.text.toString()
-            //Toast.makeText(context, "$valorUsuario : $valorSenha", Toast.LENGTH_LONG).show()
 
             if (valorUser == "aluno" && valorPass == "impacta") {
 
@@ -41,16 +40,8 @@ class MainActivity : DebugActivity() {
                 // colocar parâmetros (opcional)
                 val params = Bundle()
                 params.putString("nome", valorUser)
-
                 intent.putExtras(params)
 
-                // enviar parâmetros simplificado
-                //intent.putExtra("numero", 10)
-
-                // fazer a chamada
-                //startActivity(intent)
-
-                // fazer a chamada esperando resultado
                 startActivityForResult(intent, 1)
             } else {
                 Toast.makeText(this, "Usuário ou senha incorretos", Toast.LENGTH_LONG).show()

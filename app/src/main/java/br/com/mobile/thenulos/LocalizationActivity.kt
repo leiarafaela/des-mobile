@@ -27,14 +27,6 @@ class LocalizationActivity : AppCompatActivity() {
 
         if (id == android.R.id.home) {
             finish()
-//        } else if (id == R.id.action_atualizar) {
-//            Toast.makeText(this, "Atualizar", Toast.LENGTH_SHORT).show()
-//            progressAtualizar3.visibility = View.VISIBLE
-//            Handler(Looper.getMainLooper()).postDelayed(
-//                {
-//                    progressAtualizar3.visibility = View.GONE
-//                }, 10000
-//            )
         }
 
             return super.onOptionsItemSelected(item)

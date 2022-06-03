@@ -85,23 +85,12 @@ class DetailActivity : DebugActivity() {
             return super.onOptionsItemSelected(item)
     }
 
-
-//    private fun taskExcluir(paises: Country) {
-//        // Thread para salvar a discilpina
-//        Thread {
-//            CountryService.delete(paises)
-//            runOnUiThread {
-//                finish()
-//            }
-//        }.start()
-//    }
     private fun taskExcluir() {
         if (this.pais != null && this.pais is Country) {
             // Thread para remover a disciplina
             Thread {
                 CountryService.delete(this.pais as Country)
                 runOnUiThread {
-                    // após remover, voltar para activity anterior
                     finish()
                 }
             }.start()

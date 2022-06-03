@@ -23,10 +23,6 @@ class CountryAdapter(
                 val cardImg: ImageView
                 val cardProgress: ProgressBar
                 var cardView: CardView
-//                val cardPopulacao: TextView
-//                val cardContinente: TextView
-//                val cardLatitude: TextView
-//                val cardLongitude: TextView
 
                 init {
                     cardNome = view.findViewById<TextView>(R.id.card_nome)

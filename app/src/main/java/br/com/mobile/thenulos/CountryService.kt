@@ -14,13 +14,6 @@ object CountryService {
     val host = "https://gustavodovalle.pythonanywhere.com" //
     val TAG = "WS_TheNulos"
 
-//    fun getCountry(): List<Country>{
-//
-//        val url = "$host/paises"
-//        val json = HttpHelper.get(url)
-//        Log.d(TAG, json)
-//        return parserJson<List<Country>>(json)
-//    }
     fun getCountry (context: Context): List<Country> {
         var paises = ArrayList<Country>()
         try {

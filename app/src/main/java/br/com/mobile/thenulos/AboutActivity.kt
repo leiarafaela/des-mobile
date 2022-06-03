@@ -14,7 +14,6 @@ class AboutActivity : AppCompatActivity() {
         supportActionBar?.title = "Sobre"
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
     }
-
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         val id = item.itemId
 
