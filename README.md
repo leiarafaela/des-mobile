@@ -24,8 +24,3 @@ O TheNulos é um app sobre países que vem sendo desenvolvido ao decorrer das au
   - Países, navega para a listagem de países
   - Sobre, com informações básicas do app.
   - Sair, volta para a tela de Login.
-
-### IDE utilizada: Android Studio.
-
-## Desenvolvedores:
-[@gustavodovalle](https://github.com/gustavodovalle) [@leiarafaela](https://github.com/leiarafaela)
